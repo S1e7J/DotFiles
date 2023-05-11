@@ -1,0 +1,19 @@
+#
+# ~/.bashrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
+PS1='[\u@\h \W]\$ '
+
+alias ls='exa -l --color=always --group-directories-first'
+alias rr='curl -s -L https://raw.githubusercontent.com/keroserene/rickrollrc/master/roll.sh | bash'
+alias launchsway='bash ~/.config/sway/autostart'
+alias tmpl='bash ~/.templates/Universidad/tmpl.sh'
+
+export PATH="$HOME/.local/bin:$PATH"
+
+eval "$(starship init bash)"

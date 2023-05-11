@@ -1,0 +1,29 @@
+* {
+  border-radius: 3px;
+  border: none;
+}
+
+window {
+  font-size: 22px;
+  background-color: #1e1e2e;
+  color: #cdd6f4;
+}
+
+#entry {
+  padding: 0.25em;
+}
+
+#entry:selected {
+  background-color: #1e1e2e;
+  background: linear-gradient(90deg, #f38ba8, #f9e2af);
+}
+
+#text:selected {
+  color: #1e1e2e;
+}
+
+#input {
+  background-color: #181825;
+  color: #cdd6f4;
+  padding: 0.25em;
+}
