@@ -1,0 +1,50 @@
+set number
+set relativenumber
+set encoding=utf-8
+set sw=2
+syntax enable
+set termguicolors
+
+call plug#begin('~/.vim/plugged')
+
+Plug 'sirver/ultisnips'
+Plug 'lervag/vimtex'
+Plug 'KeitaNakamura/tex-conceal.vim'
+Plug 'jschmold/sweet-dark.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'preservim/nerdtree'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'christoomey/vim-tmux-navigator'
+
+call plug#end()
+
+colorscheme sweet_dark
+
+let g:UltiSnipsExpandTrigger = '<tab>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+
+let g:tex_flavour='latex'
+let g:vimtex_quickfix_mode=0
+
+set conceallevel=1
+let g:tex_conceal='abdmg'
+hi Conceal ctermbg=none
+
+setlocal spell
+set spelllang=es
+inoremap <C-l> <c-g>u<Esc>[s1z=`]a<c-g>u
+
+nnoremap <C-n> :NERDTreeToggle<CR>
+
+let g:airline#extensions#tabline#enabled = 1
+let g:airline#extensions#tabline#formatter = 'jsformatter'
+let g:airline_theme='wombat'
+
+
+nmap f <Plug>(easymotion-s2)
+
+nmap <tab> :bn<CR>
+nmap <s-tab> :bp<CR>
+nmap <tab>x :bd<CR>
