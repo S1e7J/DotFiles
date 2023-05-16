@@ -29,7 +29,7 @@ font pango:monospace 0
 titlebar_padding 1
 titlebar_border_thickness 0
 
-
+exec_always autotiling
 
 
 
@@ -100,6 +100,12 @@ input * {
     
     #ScreenShot
     bindsym $mod+Shift+s exec flameshot gui
+
+    # Man Page
+    bindsym $mod+Shift+p exec bash ~/.scripts/document.sh
+
+    # Saved
+    bindsym $mod+p exec bash ~/.scripts/saved.sh
 
     #Block Screen
     bindsym $mod+Shift+b exec swaylock -i ~/.software/catppuccin-wallpapers/os/tux-black-4k.png
