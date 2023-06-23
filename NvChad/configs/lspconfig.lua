@@ -3,28 +3,12 @@ local capabilities = require("plugins.configs.lspconfig").capabilities
 local lspconfig = require("lspconfig")
 local util = require "lspconfig/util"
 
-
--- Configuración de Rust Analyzer. Tiene problemas de Compatibilidad con Debuggin
--- lspconfig.rust_analyzer.setup({
---   on_attach=on_attach,
---   capabilities=capabilities,
---   filetypes = {"rust"},
---   root_dir = util.root_pattern("Cargo.toml"),
---   settings = {
---     ['rust_analyzer'] ={
---       cargo = {
---         allFeatures = true,
---       },
---     },
---   },
--- })
-
 lspconfig.gopls.setup {
   on_attach = on_attach,
-  capabilities =capabilities,
+  capabilities = capabilities,
   cmd = {"gopls"},
-  filetypes = {"go", "gomod", "gowork", "gotmpl"},
-  root_dir = util.root_pattern("go.work","go.mod",".git"),
+  filetypes = {"go", "gomod", "gowork", "gotmpl" },
+  root_dir = util.root_pattern("go.work", "go.mod", ".git"),
   settings = {
     gopls = {
       completeUnimported = true,
@@ -35,3 +19,9 @@ lspconfig.gopls.setup {
     },
   },
 }
+
+lspconfig.pyright.setup({
+  on_attach = on_attach,
+  capabilities = capabilities,
+  filetypes = {"python"},
+})
