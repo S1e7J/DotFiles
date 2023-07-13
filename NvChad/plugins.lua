@@ -22,9 +22,7 @@ local plugins = {
   },
   {
     "rust-lang/rust.vim",
-    ft="rust",
-    init = function ()
-      vim.g.rustfmt_autosave = 1
+    ft="rust", init = function () vim.g.rustfmt_autosave = 1
     end,
   },
   {
@@ -123,20 +121,20 @@ local plugins = {
       require("core.utils").load_mappings("dap_python")
     end,
   },
-  {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    },
-    config = function ()
-      require("chatgpt").setup({
-        api_key_cmd = "pass show nvim/chatgpt",
-      })
-    end
-  },
+  -- {
+  --   "jackMort/ChatGPT.nvim",
+  --   event = "VeryLazy",
+  --   dependencies = {
+  --     "MunifTanjim/nui.nvim",
+  --     "nvim-lua/plenary.nvim",
+  --     "nvim-telescope/telescope.nvim"
+  --   },
+  --   config = function ()
+  --     require("chatgpt").setup({
+  --       api_key_cmd = "pass show nvim/chatgpt",
+  --     })
+  --   end
+  -- },
 }
 
 return plugins
